@@ -1,0 +1,16 @@
+
+--paso 1 pararte en la base de datos a usar
+use BDAlumnos      
+
+--paso 2 crear tabla usuario
+create table Usuario(         
+IDUsuario int primary key identity(1,1),
+Username varchar(100),
+Clave varchar(500)
+
+)	
+
+--paso 3
+--para que no se agregen nombres de usuarios repetidos esta propiedad
+ALTER TABLE Usuario
+ADD CONSTRAINT UQ_Username UNIQUE (Username);
